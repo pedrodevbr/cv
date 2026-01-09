@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automation Engineer | Data Science Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --accent: #38bdf8; /* Sky Blue */
+            --accent-hover: #0ea5e9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 4rem 0;
+            border-bottom: 1px solid #334155;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.05em;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .intro {
+            color: var(--text-secondary);
+            margin-top: 1rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Sections */
+        section {
+            margin: 4rem 0;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        h2::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: #334155;
+        }
+
+        /* Cards */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #334155;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .job-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+        }
+
+        .company {
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+
+        .date {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-family: monospace;
+        }
+
+        /* Tags */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent);
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Spotlight Section (Medium Article) */
+        .spotlight {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border: 1px solid var(--accent);
+            padding: 2rem;
+            border-radius: 12px;
+        }
+
+        .spotlight h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--accent);
+            color: #0f172a;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+        }
+
+        /* Contact Footer */
+        footer {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #334155;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .social-links a {
+            color: var(--text-secondary);
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .container { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <h1>[Your Name]</h1>
+            <div class="subtitle">Automation Engineer & Data Scientist</div>
+            <p class="intro">
+                Specializing in Python Automation, Complex Web Scraping, and Hybrid AI Pipelines. 
+                Bridging the gap between legacy Enterprise Data and Generative AI.
+            </p>
+            <div class="tags" style="justify-content: center; margin-top: 1.5rem;">
+                <span class="tag">Python</span>
+                <span class="tag">Web Scraping</span>
+                <span class="tag">LLM Integration</span>
+                <span class="tag">SAP Automation</span>
+                <span class="tag">MBA Data Science</span>
+            </div>
+        </header>
+
+        <section>
+            <h2>Featured Work</h2>
+            <div class="spotlight">
+                <span style="color: var(--accent); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.05em;">CASE STUDY</span>
+                <h3>AI & Automation Transforming Inventory Management in SAP</h3>
+                <p style="color: var(--text-secondary); margin: 0.5rem 0 1.5rem 0;">
+                    A deep dive into how I architected a hybrid agent workflow connecting SAP ERP data with LLM APIs to automate logistics reporting and decision-making. This project reduced manual reporting time by 80% and introduced AI-driven predictive analysis to the supply chain.
+                </p>
+                <a href="[LINK_TO_YOUR_MEDIUM_ARTICLE]" target="_blank" class="btn">Read on Medium</a>
+            </div>
+        </section>
+
+        <section>
+            <h2>Experience</h2>
+            <div class="grid">
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <div class="job-title">Automation & Data Engineer</div>
+                            <div class="company">Itaipu Binacional (Logistics)</div>
+                        </div>
+                        <div class="date">2020 — Present</div>
+                    </div>
+                    <ul style="padding-left: 1.2rem; color: var(--text-secondary); font-size: 0.95rem;">
+                        <li style="margin-bottom: 0.5rem;">Developed Python pipelines extracting data from SAP ECC, cleaning it, and feeding it into dashboarding tools.</li>
+                        <li style="margin-bottom: 0.5rem;">Integrated Generative AI APIs to analyze unstructured logistics notes and automate report generation.</li>
+                        <li>Ensured data quality across thousands of SKUs using automated validation scripts.</li>
+                    </ul>
+                    <div class="tags">
+                        <span class="tag">SAP</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">OpenAI API</span>
+                        <span class="tag">Pandas</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <div class="job-title">Freelance Web Scraper</div>
+                            <div class="company">Self-Employed</div>
+                        </div>
+                        <div class="date">2019 — Present</div>
+                    </div>
+                    <ul style="padding-left: 1.2rem; color: var(--text-secondary); font-size: 0.95rem;">
+                        <li style="margin-bottom: 0.5rem;">Built dozens of custom scrapers for international clients to extract data from multi-page, dynamic websites.</li>
+                        <li style="margin-bottom: 0.5rem;">Handled CAPTCHA solving, IP rotation, and AJAX requests using Selenium and BeautifulSoup.</li>
+                        <li>Delivered clean, structured datasets (JSON/CSV) ready for immediate business analysis.</li>
+                    </ul>
+                    <div class="tags">
+                        <span class="tag">Selenium</span>
+                        <span class="tag">BeautifulSoup</span>
+                        <span class="tag">Scrapy</span>
+                        <span class="tag">Data Mining</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <h2>Technical Profile</h2>
+            <div class="grid">
+                
+                <div class="card">
+                    <div class="job-title" style="margin-bottom: 1rem;">Core Stack</div>
+                    <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                        <div>
+                            <strong style="color: var(--accent);">Scripting & Scraping</strong>
+                            <div style="color: var(--text-secondary); font-size: 0.9rem;">Python (Advanced), Selenium, Scrapy, Request, API Integration.</div>
+                        </div>
+                        <div>
+                            <strong style="color: var(--accent);">Data & AI</strong>
+                            <div style="color: var(--text-secondary); font-size: 0.9rem;">Pandas, NumPy, SQL, LLM Prompt Engineering, RAG Pipelines.</div>
+                        </div>
+                        <div>
+                            <strong style="color: var(--accent);">Visualization</strong>
+                            <div style="color: var(--text-secondary); font-size: 0.9rem;">Power BI, Matplotlib, Excel (Advanced).</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="job-title" style="margin-bottom: 1rem;">Education & Global Context</div>
+                    
+                    <div style="margin-bottom: 1rem;">
+                        <div style="color: var(--text-primary); font-weight: 600;">MBA in Data Science</div>
+                        <div style="color: var(--text-secondary); font-size: 0.9rem;">[University Name]</div>
+                    </div>
+
+                    <div style="margin-bottom: 1rem;">
+                        <div style="color: var(--text-primary); font-weight: 600;">B.Sc. Mechatronics Engineering</div>
+                        <div style="color: var(--text-secondary); font-size: 0.9rem;">[University Name]</div>
+                    </div>
+
+                    <div style="padding-top: 0.5rem; border-top: 1px dashed #334155;">
+                        <strong style="color: var(--accent);">Global Experience 🇦🇺</strong>
+                        <div style="color: var(--text-secondary); font-size: 0.9rem;">
+                            Lived and worked in <strong>Australia for 2 years</strong>. 
+                            <br>Fluent English (C1/C2 Level).
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <footer>
+            <div class="social-links">
+                <a href="mailto:[YOUR_EMAIL]">Email</a>
+                <a href="[LINKEDIN_URL]" target="_blank">LinkedIn</a>
+                <a href="[GITHUB_URL]" target="_blank">GitHub</a>
+                <a href="[MEDIUM_URL]" target="_blank">Medium</a>
+            </div>
+            <p style="margin-top: 1rem;">&copy; 2026 [Your Name]. Built for Mindrift Application.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
