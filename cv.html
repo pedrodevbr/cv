@@ -3,197 +3,267 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pedro Berto | Automation & AI Engineer</title>
+    <title>Pedro Berto | Vibecode Specialist Applicant</title>
     <style>
+        /* RESET & FONTS */
         :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --text-primary: #f1f5f9;
-            --text-secondary: #94a3b8;
-            --accent: #38bdf8; /* Sky Blue */
-            --accent-hover: #0ea5e9;
+            --bg-color: #050505;
+            --card-bg: #141414;
+            --card-hover: #1f1f1f;
+            --text-main: #ffffff;
+            --text-muted: #888888;
+            --accent: #D4FF00; /* Mindrift-style Electric Lime */
+            --accent-text: #000000;
+            --border: #333333;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
 
         body {
             background-color: var(--bg-color);
-            color: var(--text-primary);
-            line-height: 1.6;
+            color: var(--text-main);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Layout */
+        /* LAYOUT */
         .container {
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 2rem 1.5rem;
+            padding: 4rem 1.5rem;
         }
 
-        /* Header */
+        /* HEADER SECTION */
         header {
-            text-align: center;
-            padding: 4rem 0;
-            border-bottom: 1px solid #334155;
+            margin-bottom: 5rem;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: rgba(212, 255, 0, 0.1);
+            color: var(--accent);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(212, 255, 0, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.05em;
-        }
-
-        .subtitle {
-            font-size: 1.25rem;
-            color: var(--accent);
-            font-weight: 500;
+            font-size: 3.5rem;
+            line-height: 1.1;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 1.5rem;
         }
 
         .intro {
-            color: var(--text-secondary);
-            margin-top: 1rem;
+            font-size: 1.25rem;
+            color: var(--text-muted);
             max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            font-weight: 400;
         }
 
-        /* Sections */
+        /* SECTIONS */
         section {
-            margin: 4rem 0;
+            margin-bottom: 5rem;
         }
 
-        h2 {
-            font-size: 1.5rem;
+        .section-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
             margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
+            font-weight: 600;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1rem;
         }
 
-        h2::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: #334155;
-        }
-
-        /* Cards */
+        /* GRID SYSTEM */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: 1fr;
             gap: 1.5rem;
         }
 
+        @media(min-width: 768px) {
+            .grid-2 { grid-template-columns: 1fr 1fr; }
+        }
+
+        /* CARDS */
         .card {
             background: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 8px;
-            border: 1px solid #334155;
-            transition: transform 0.2s;
+            padding: 2rem;
+            border-radius: 24px; /* Highly rounded for that "App" feel */
+            border: 1px solid #222;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
         }
 
         .card:hover {
-            transform: translateY(-3px);
-            border-color: var(--accent);
+            background: var(--card-hover);
+            transform: translateY(-2px);
+            border-color: #444;
         }
 
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 1rem;
+        /* FEATURED CARD (Medium) */
+        .featured-card {
+            background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
         }
 
-        .job-title {
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: var(--text-primary);
+        .featured-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: var(--accent);
+            filter: blur(80px);
+            opacity: 0.15;
         }
 
-        .company {
-            color: var(--accent);
-            font-size: 0.9rem;
-        }
-
-        .date {
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            font-family: monospace;
-        }
-
-        /* Tags */
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        .tag {
-            background: rgba(56, 189, 248, 0.1);
-            color: var(--accent);
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
+        .card-label {
             font-size: 0.8rem;
-            font-weight: 500;
-        }
-
-        /* Spotlight Section (Medium Article) */
-        .spotlight {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            border: 1px solid var(--accent);
-            padding: 2rem;
-            border-radius: 12px;
-        }
-
-        .spotlight h3 {
-            font-size: 1.5rem;
+            color: var(--accent);
+            font-weight: 700;
             margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--text-main);
+        }
+
+        .card-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
         }
 
         .btn {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 0.75rem 1.5rem;
-            background-color: var(--accent);
-            color: #0f172a;
-            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            background: var(--accent);
+            color: var(--accent-text);
+            padding: 10px 20px;
+            border-radius: 50px;
             font-weight: 600;
-            border-radius: 6px;
-            transition: background 0.2s;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: opacity 0.2s;
         }
 
         .btn:hover {
-            background-color: var(--accent-hover);
+            opacity: 0.9;
         }
 
-        /* Contact Footer */
-        footer {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid #334155;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
+        /* EXPERIENCE ITEMS */
+        .exp-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+        }
+        
+        .exp-role { font-weight: 700; font-size: 1.1rem; }
+        .exp-company { color: var(--accent); font-family: monospace; }
+        .exp-date { font-family: monospace; color: var(--text-muted); font-size: 0.85rem; }
+        .exp-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+        .exp-list li {
+            position: relative;
+            padding-left: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #ccc;
+            font-size: 0.95rem;
+        }
+        .exp-list li::before {
+            content: '›';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
         }
 
-        .social-links a {
-            color: var(--text-secondary);
-            margin: 0 10px;
-            text-decoration: none;
-            font-size: 1.1rem;
+        /* SKILL TAGS (Pill shaped) */
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
         }
 
-        .social-links a:hover {
+        .tag {
+            background: #222;
+            color: #fff;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            border: 1px solid #333;
+            font-family: monospace;
+        }
+
+        .tag.highlight {
+            border-color: var(--accent);
             color: var(--accent);
         }
 
+        /* FOOTER */
+        footer {
+            border-top: 1px solid var(--border);
+            padding-top: 3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-link {
+            font-size: 1.5rem;
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.2s;
+        }
+
+        .contact-link:hover {
+            color: var(--accent);
+        }
+
+        .socials {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .socials a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .socials a:hover { color: var(--text-main); }
+
         @media (max-width: 600px) {
-            h1 { font-size: 2rem; }
-            .container { padding: 1rem; }
+            h1 { font-size: 2.5rem; }
+            .container { padding: 2rem 1.2rem; }
+            .exp-item { flex-direction: column; gap: 0.2rem; }
         }
     </style>
 </head>
@@ -202,76 +272,88 @@
     <div class="container">
         
         <header>
+            <div class="status-badge">Available for Tendem Project</div>
             <h1>Pedro Berto</h1>
-            <div class="subtitle">Automation Engineer & Data Scientist</div>
             <p class="intro">
-                Specializing in Python Automation, Complex Web Scraping, and Hybrid AI Pipelines. 
-                Bridging the gap between legacy Enterprise Data and Generative AI.
+                Automation Engineer & Data Scientist. I build the bridge between 
+                legacy enterprise data and the future of Generative AI.
             </p>
-            <div class="tags" style="justify-content: center; margin-top: 1.5rem;">
-                <span class="tag">Python</span>
-                <span class="tag">Web Scraping</span>
-                <span class="tag">LLM Integration</span>
-                <span class="tag">SAP Automation</span>
-                <span class="tag">MBA Data Science</span>
-            </div>
         </header>
 
         <section>
-            <h2>Featured Work</h2>
-            <div class="spotlight">
-                <span style="color: var(--accent); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.05em;">CASE STUDY</span>
-                <h3>How AI and Process Innovation are Transforming Inventory Management</h3>
-                <p style="color: var(--text-secondary); margin: 0.5rem 0 1.5rem 0;">
-                    A deep dive into how I architected a hybrid agent workflow connecting SAP ERP data with LLM APIs to automate logistics reporting and decision-making. This project reduced manual reporting time by 80% and introduced AI-driven predictive analysis to the supply chain.
+            <div class="section-title">Case Study / Mission</div>
+            <a href="https://medium.com/@ordep.vb/how-ai-and-process-innovation-are-transforming-inventory-management-b441dcaadb90" target="_blank" class="card featured-card">
+                <span class="card-label">PUBLICATION</span>
+                <div class="card-title">AI & Automation in SAP Logistics</div>
+                <p class="card-desc">
+                    A technical deep-dive into how I integrated LLM APIs with SAP ERP to create a hybrid agent system. 
+                    This workflow automated 80% of manual reporting and enabled predictive inventory management.
                 </p>
-                <a href="https://medium.com/@ordep.vb/how-ai-and-process-innovation-are-transforming-inventory-management-b441dcaadb90" target="_blank" class="btn">Read on Medium</a>
+                <span class="btn">Read on Medium ↗</span>
+            </a>
+        </section>
+
+        <section>
+            <div class="section-title">Professional History</div>
+            <div class="grid">
+                
+                <div class="card">
+                    <div class="exp-item">
+                        <div>
+                            <div class="exp-role">Automation & Data Engineer</div>
+                            <div class="exp-company">Itaipu Binacional</div>
+                        </div>
+                        <div class="exp-date">2020 — PRESENT</div>
+                    </div>
+                    <ul class="exp-list">
+                        <li>Architected Python ETL pipelines extracting data from SAP ECC.</li>
+                        <li>Implemented RAG-based systems to analyze unstructured logistics notes.</li>
+                        <li>Automated data cleaning and validation for thousands of SKUs.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="exp-item">
+                        <div>
+                            <div class="exp-role">Freelance Specialist</div>
+                            <div class="exp-company">Web Scraping & Scripting</div>
+                        </div>
+                        <div class="exp-date">2019 — PRESENT</div>
+                    </div>
+                    <ul class="exp-list">
+                        <li>Developed 20+ custom scrapers for multi-page, dynamic websites.</li>
+                        <li>Solved complex CAPTCHA and IP rotation challenges using Selenium.</li>
+                        <li>Delivered structured datasets (JSON/CSV) ready for ML training.</li>
+                    </ul>
+                </div>
+
             </div>
         </section>
 
         <section>
-            <h2>Experience</h2>
-            <div class="grid">
+            <div class="section-title">Vibecode Arsenal</div>
+            <div class="grid grid-2">
                 
                 <div class="card">
-                    <div class="card-header">
-                        <div>
-                            <div class="job-title">Automation & Data Engineer</div>
-                            <div class="company">Itaipu Binacional (Logistics)</div>
-                        </div>
-                        <div class="date">2020 — Present</div>
-                    </div>
-                    <ul style="padding-left: 1.2rem; color: var(--text-secondary); font-size: 0.95rem;">
-                        <li style="margin-bottom: 0.5rem;">Developed Python pipelines extracting data from SAP ECC, cleaning it, and feeding it into dashboarding tools.</li>
-                        <li style="margin-bottom: 0.5rem;">Integrated Generative AI APIs to analyze unstructured logistics notes and automate report generation.</li>
-                        <li>Ensured data quality across thousands of SKUs using automated validation scripts.</li>
-                    </ul>
-                    <div class="tags">
-                        <span class="tag">SAP</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">OpenAI API</span>
-                        <span class="tag">Pandas</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <div>
-                            <div class="job-title">Freelance Web Scraper</div>
-                            <div class="company">Self-Employed</div>
-                        </div>
-                        <div class="date">2019 — Present</div>
-                    </div>
-                    <ul style="padding-left: 1.2rem; color: var(--text-secondary); font-size: 0.95rem;">
-                        <li style="margin-bottom: 0.5rem;">Built dozens of custom scrapers for international clients to extract data from multi-page, dynamic websites.</li>
-                        <li style="margin-bottom: 0.5rem;">Handled CAPTCHA solving, IP rotation, and AJAX requests using Selenium and BeautifulSoup.</li>
-                        <li>Delivered clean, structured datasets (JSON/CSV) ready for immediate business analysis.</li>
-                    </ul>
-                    <div class="tags">
-                        <span class="tag">Selenium</span>
+                    <div class="card-label" style="color: #fff; margin-bottom: 1rem;">CORE STACK</div>
+                    <div class="tag-container">
+                        <span class="tag highlight">Python</span>
+                        <span class="tag highlight">Selenium</span>
                         <span class="tag">BeautifulSoup</span>
-                        <span class="tag">Scrapy</span>
-                        <span class="tag">Data Mining</span>
+                        <span class="tag">Pandas</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">Git</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-label" style="color: #fff; margin-bottom: 1rem;">AI & CONTEXT</div>
+                    <div class="tag-container">
+                        <span class="tag highlight">LLM Integration</span>
+                        <span class="tag">RAG Pipelines</span>
+                        <span class="tag">Prompt Eng.</span>
+                        <span class="tag">SAP ERP</span>
+                        <span class="tag">English C1/C2</span>
                     </div>
                 </div>
 
@@ -279,59 +361,28 @@
         </section>
 
         <section>
-            <h2>Technical Profile</h2>
-            <div class="grid">
-                
-                <div class="card">
-                    <div class="job-title" style="margin-bottom: 1rem;">Core Stack</div>
-                    <div style="display: flex; flex-direction: column; gap: 0.8rem;">
-                        <div>
-                            <strong style="color: var(--accent);">Scripting & Scraping</strong>
-                            <div style="color: var(--text-secondary); font-size: 0.9rem;">Python (Advanced), Selenium, Scrapy, Request, API Integration.</div>
-                        </div>
-                        <div>
-                            <strong style="color: var(--accent);">Data & AI</strong>
-                            <div style="color: var(--text-secondary); font-size: 0.9rem;">Pandas, NumPy, SQL, LLM Prompt Engineering, RAG Pipelines.</div>
-                        </div>
-                        <div>
-                            <strong style="color: var(--accent);">Visualization</strong>
-                            <div style="color: var(--text-secondary); font-size: 0.9rem;">Power BI, Matplotlib, Excel (Advanced).</div>
-                        </div>
-                    </div>
+            <div class="section-title">Education</div>
+            <div class="grid grid-2">
+                <div class="card" style="padding: 1.5rem;">
+                    <div class="exp-role" style="font-size: 1rem;">MBA Data Science</div>
+                    <div class="exp-company">USP</div>
                 </div>
-
-                <div class="card">
-                    <div class="job-title" style="margin-bottom: 1rem;">Education & Global Context</div>
-                    
-                    <div style="margin-bottom: 1rem;">
-                        <div style="color: var(--text-primary); font-weight: 600;">MBA in Data Science</div>
-                        <div style="color: var(--text-secondary); font-size: 0.9rem;">USP (Universidade de São Paulo)</div>
-                    </div>
-
-                    <div style="margin-bottom: 1rem;">
-                        <div style="color: var(--text-primary); font-weight: 600;">B.Sc. Mechatronics Engineering</div>
-                        <div style="color: var(--text-secondary); font-size: 0.9rem;">UNB (Universidade de Brasília)</div>
-                    </div>
-
-                    <div style="padding-top: 0.5rem; border-top: 1px dashed #334155;">
-                        <strong style="color: var(--accent);">Global Experience 🇦🇺</strong>
-                        <div style="color: var(--text-secondary); font-size: 0.9rem;">
-                            Lived and worked in <strong>Australia for 2 years</strong>. 
-                            <br>Fluent English (C1/C2 Level).
-                        </div>
-                    </div>
+                <div class="card" style="padding: 1.5rem;">
+                    <div class="exp-role" style="font-size: 1rem;">B.Sc. Mechatronics</div>
+                    <div class="exp-company">UNB</div>
                 </div>
-
             </div>
         </section>
 
         <footer>
-            <div class="social-links">
-                <a href="mailto:ordep.vb@gmail.com">Email</a>
-                <a href="https://github.com/pedrodevbr" target="_blank">GitHub</a>
-                <a href="https://medium.com/@ordep.vb/how-ai-and-process-innovation-are-transforming-inventory-management-b441dcaadb90" target="_blank">Medium</a>
+            <div>
+                <a href="mailto:ordep.vb@gmail.com" class="contact-link">ordep.vb@gmail.com</a>
+                <p style="color: var(--text-muted); margin-top: 0.5rem;">Based in Brazil • Lived in Australia (2y)</p>
             </div>
-            <p style="margin-top: 1rem;">&copy; 2026 Pedro Berto. Built for Mindrift Application.</p>
+            <div class="socials">
+                <a href="https://github.com/pedrodevbr" target="_blank">GITHUB @pedrodevbr</a>
+                <a href="https://medium.com/@ordep.vb/how-ai-and-process-innovation-are-transforming-inventory-management-b441dcaadb90" target="_blank">MEDIUM</a>
+            </div>
         </footer>
 
     </div>
